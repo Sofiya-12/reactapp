@@ -1,0 +1,140 @@
+// LazyLoadin
+// import React, { Suspense, lazy } from 'react'
+// const Compo1 = lazy(()=>import("./Efficiency/lazyloading/Compo1"))
+// const Compo2 = lazy(()=>import("./Efficiency/lazyloading/Compo2"))
+// export default function App() {
+//   return (
+//     <div>
+//         <h1>Sofiya</h1>
+//         <Suspense fallback = {<h3>Please wait.....</h3>}>
+//         <Compo1/>
+//        </Suspense>
+//        <Suspense fallback = {<h1>Wait....</h1>}>
+//         <Compo2/>
+//        </Suspense>
+//     </div>
+//   )
+// }
+
+// To Do list
+// import React, { useState } from 'react'
+
+// export default function App() {
+//   const [todo,setTodo] = useState(["Item1","Item2"])
+//   const [input,setInput] = useState("")
+//   const handleSubmit=(e)=>{
+//     e.preventDefault();
+//    if(input.length>0){
+//     const newList = todo.concat(input);
+//     setTodo(newList)
+//    }else{
+//     alert('Nothing to add')
+//    }
+//   }
+//   const handleRemove =(i)=>{
+//     const newList = todo.filter((item,index)=>{return i !== index})
+//     setTodo(newList)
+//   }
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <input type="text" value={input} onChange={(e)=>setInput(e.target.value)}/>
+//         <input type="submit" value="ADD" />
+//       </form>
+//       {todo.map((item,index)=>
+//       <>
+//       <li>{item}</li>
+//       <button onClick={()=>handleRemove(index)}>Remove</button>
+//       </>)}
+
+//     </div>
+//   )
+// }
+
+// Calculator 
+
+// import React, { useState, useRef } from "react";
+// import "./App.css";
+
+// function App() {
+//   const inputRef = useRef(null);
+//   const resultRef = useRef(null);
+//   const [result, setResult] = useState(0);
+
+//   function plus(e) {
+//     e.preventDefault();
+//     setResult((result) => result + Number(inputRef.current.value));
+//     resetInput();
+//   }
+
+//   function minus(e) {
+//     e.preventDefault();
+//     setResult((result) => result - Number(inputRef.current.value));
+//     resetInput();
+//   }
+
+//   function times(e) {
+//     e.preventDefault();
+//     setResult((result) => result * Number(inputRef.current.value));
+//     resetInput();
+//   }
+
+//   function divide(e) {
+//     e.preventDefault();
+//     setResult((result) => result / Number(inputRef.current.value));
+//     resetInput();
+//   }
+
+//   function resetInput() {
+//     inputRef.current.value = "";
+//   }
+
+//   function resetResult(e) {
+//     e.preventDefault();
+//     setResult(0);
+//     resetInput();
+//   }
+
+//   return (
+//     <div className="App">
+//       <div>
+//         <h1>Simplest Working Calculator</h1>
+//       </div>
+//       <form>
+//         <p ref={resultRef}>{result}</p>
+//         <input
+//           pattern="[0-9]"
+//           ref={inputRef}
+//           type="number"
+//           placeholder="Type a number"
+//         />
+//         <button onClick={plus}>add</button>
+//         <button onClick={minus}>subtract</button>
+//         <button onClick={times}>multiply</button>
+//         <button onClick={divide}>divide</button>
+//         <button onClick={resetInput}>resetInput</button>
+//         <button onClick={resetResult}>resetResult</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Ref
+// import React, { useRef } from 'react'
+
+// export default function App() {
+//   const divref = useRef()
+//   const handleDiv =()=>{
+//     divref.current.innerHTML="Hello World"
+//     divref.current.style.backgroundColor = 'pink'
+//   }
+ 
+//   return (
+//     <div ref={divref}>
+//       <button onClick={handleDiv}>Show</button>
+//        </div>
+//   )
+// }
+
